@@ -11,36 +11,34 @@ const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA + ASPECT_RATIO;
 
 const CustomMap = ({ setMarker, marker, setRegion, region }) => {
+  useEffect(() => {
+    getLocation();
+  }, []);
 
- 
-  useEffect(()=>{
-    getLocation()
-  },[])
-
-  const getLocation = async ()=>{
-    const permission = await requestLocationPermission((location)=>{
+  const getLocation = async () => {
+    const permission = await requestLocationPermission((location) => {
       setRegion({
-        latitude:location?.coords?.latitude ||  36.2443422,
-        longitude:location.coords?.longitude || 113.7354532,
+        latitude: location?.coords?.latitude || 36.2443422,
+        longitude: location.coords?.longitude || -113.7354532,
         latitudeDelta: LATITUDE_DELTA,
         longitudeDelta: LONGITUDE_DELTA,
       });
       setMarker({
-        latitude:location?.coords?.latitude ||   36.2443422,
-        longitude:location.coords?.longitude || 113.7354532,
+        latitude: location?.coords?.latitude || 36.2443422,
+        longitude: location.coords?.longitude || -113.7354532,
         latitudeDelta: LATITUDE_DELTA,
         longitudeDelta: LONGITUDE_DELTA,
       });
-      })
-      if(!permission){
-        setRegion({
-          latitude:  36.2443422,
-          longitude: 113.7354532,
-          latitudeDelta: LATITUDE_DELTA,
-          longitudeDelta: LONGITUDE_DELTA,
-        });
-      }
-  }
+    });
+    if (!permission) {
+      setRegion({
+        latitude: 36.2443422,
+        longitude: -113.7354532,
+        latitudeDelta: LATITUDE_DELTA,
+        longitudeDelta: LONGITUDE_DELTA,
+      });
+    }
+  };
   // useEffect(() => {
   //   getCurentLocation();
   // }, []);
@@ -96,4 +94,3 @@ const styles = StyleSheet.create({
     height: Dimensions.get("screen").height,
   },
 });
-
