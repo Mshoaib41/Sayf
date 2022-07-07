@@ -5,20 +5,20 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AuthStack from "./AuthStack";
 import MainStack from "./MainStack";
 
-const theme= {
+const theme = {
   ...DefaultTheme,
-  colors:{
+  colors: {
     ...DefaultTheme.colors,
-    background:'#fff'
-  }
-}
+    background: "#fff",
+  },
+};
 const Routes = () => {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer theme={theme}>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName="MainStack"
+        initialRouteName="AuthStack"
       >
         <Stack.Screen name="AuthStack" component={AuthStack} />
         <Stack.Screen name="MainStack" component={MainStack} />

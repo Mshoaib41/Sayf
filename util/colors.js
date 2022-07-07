@@ -19,6 +19,7 @@ const colors = {
   gray20:"rgba(157, 157, 157, 1)",
   darkGray:"rgba(144, 144, 144, 1)",
   gray30:'#F1F1F1',
+  gryColor:"#747474"
   
 };
 export default colors;
