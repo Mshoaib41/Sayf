@@ -39,36 +39,6 @@ const CustomMap = ({ setMarker, marker, setRegion, region }) => {
       });
     }
   };
-  // useEffect(() => {
-  //   getCurentLocation();
-  // }, []);
-  // const getCurentLocation = async () => {
-  //   try {
-  //     let { status } = await Location.requestForegroundPermissionsAsync();
-  //     if (status !== "granted") {
-  //       Alert.alert("Permission to access location was denied");
-  //       return;
-  //     }
-  //     let location = await Location.getCurrentPositionAsync({});
-  //     setRegion({
-  //       latitude: location?.coords?.latitude || 36.2443422,
-  //       longitude: location?.coords?.longitude ||113.7354532,
-  //       latitudeDelta: LATITUDE_DELTA,
-  //       longitudeDelta: LONGITUDE_DELTA,
-  //     });
-  //     setMarker({
-  //       latitude: location?.coords?.latitude || 36.2443422,
-  //       longitude: location?.coords?.longitude ||113.7354532,
-  //       latitudeDelta: LATITUDE_DELTA,
-  //       longitudeDelta: LONGITUDE_DELTA,
-  //     });
-  //   } catch (error) {
-  //     if (error.code == "E_LOCATION_UNAUTHORIZED") {
-  //       Alert.alert("Please enable the location");
-  //     }
-  //     console.log("getCurentLocation", error.code);
-  //   }
-  // };
   return (
     <View style={styles.container}>
       <MapView

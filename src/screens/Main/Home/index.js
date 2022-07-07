@@ -36,6 +36,7 @@ const Home = ({navigation}) => {
         iconWidth="18%"
         width="100%"
         backgroundColor={colors.gray10}
+        placeholder={'Search User'}
       />
       <ScrollView showsVerticalScrollIndicator={false}>
         <SeeAll title="Nearby" onPress={() => console.log('Nearby')} />

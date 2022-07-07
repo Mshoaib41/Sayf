@@ -17,7 +17,8 @@ const colors = {
   bottomBorder:"rgba(182, 182, 182, 1)",
   black100:"rgba(27, 27, 27, 1)",
   gray20:"rgba(157, 157, 157, 1)",
-  darkGray:"rgba(144, 144, 144, 1)"
+  darkGray:"rgba(144, 144, 144, 1)",
+  gray30:'#F1F1F1',
   
 };
 export default colors;

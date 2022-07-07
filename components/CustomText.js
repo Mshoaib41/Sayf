@@ -9,7 +9,7 @@ const CustomText = (props) => {
         <Text
           style={[
             {
-              fontSize: verticalScale(props.fontSize || 14),
+              fontSize: verticalScale(props.fontSize || 13),
               color: props.color || "black",
               fontFamily: props.fontFamily || "PoppinsRegular",
               marginTop: verticalScale(props.marginTop || 0),
@@ -17,6 +17,7 @@ const CustomText = (props) => {
               marginLeft: scale(props.marginLeft || 0),
               alignSelf: props.alignSelf || "flex-start",
               marginRight: verticalScale(props.marginRight || 0),
+              marginLeft: verticalScale(props.marginLeft || 0),
             },
             props.textStyle,
           ]}

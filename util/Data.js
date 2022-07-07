@@ -23,3 +23,43 @@ export const OnBoardingData = [
     }
   ];
 
+
+  export const NOTIFICATIONS_DATA = [
+    {
+      id: 0,
+      user_image: "https://picsum.photos/id/238/200/300",
+      text: 'Saira Khan shared your post',
+      createdAt: '8:02PM'
+    },
+    {
+      id: 1,
+      user_image: "https://picsum.photos/id/239/200/300",
+      text: 'Saira Khan took part in discussion',
+      createdAt: '7:02PM'
+    },
+    {
+      id: 2,
+      user_image: "https://picsum.photos/id/227/200/300",
+      text: 'Saira Khan shared rated a loca..',
+      createdAt: '4:02AM'
+    },
+    {
+      id: 3,
+      user_image: "https://picsum.photos/id/240/200/300",
+      text: 'Saira Khan shared your post',
+      createdAt: '3:02PM'
+    },
+    {
+      id: 4,
+      user_image: "https://picsum.photos/id/545/200/300",
+      text: 'Saira Khan took part in discussion',
+      createdAt: '2:02PM'
+    },
+    {
+      id: 5,
+      user_image: "https://picsum.photos/id/290/200/300",
+      text: 'Saira Khan shared rated a location',
+      createdAt: '1:02PM'
+    },
+  ]
+
