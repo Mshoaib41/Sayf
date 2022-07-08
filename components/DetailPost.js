@@ -71,6 +71,8 @@ const styles = ScaledSheet.create({
     borderRadius: "16@vs",
     paddingBottom: 0,
     marginVertical: verticalScale(10),
+    width:"95%",
+    alignSelf:"center"
   },
   photoMainCont: {
     flexDirection: "row",

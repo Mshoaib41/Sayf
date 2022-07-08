@@ -59,7 +59,6 @@ const styles = ScaledSheet.create({
   mainContainer: {
     flex: 1,
     backgroundColor: colors.backgroundColor,
-    paddingVertical: verticalScale(10),
     paddingHorizontal: verticalScale(10),
   },
   mapIconCont: {

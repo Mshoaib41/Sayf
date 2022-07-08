@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
-import React from "react";
+import { StyleSheet, Text, View, Image, TextInput,  } from "react-native";
+import React,{useEffect} from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScaledSheet } from "react-native-size-matters";
 import { verticalScale } from "react-native-size-matters";
@@ -7,7 +7,8 @@ import colors from "../../../../util/colors";
 import LinearGradient from "react-native-linear-gradient";
 import Icon from "../../../../components/Icons";
 import CustomText from "../../../../components/CustomText";
-const Conversation = () => {
+const Conversation = ({navigation}) => {
+
   return (
     <SafeAreaView style={styles.mainContainer}>
       <LinearGradient

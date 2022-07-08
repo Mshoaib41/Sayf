@@ -1,4 +1,10 @@
-import { TouchableOpacity, ScrollView, Text, FlatList } from "react-native";
+import {
+  TouchableOpacity,
+  ScrollView,
+  Text,
+  FlatList,
+  View,
+} from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { scale, ScaledSheet, verticalScale } from "react-native-size-matters";
@@ -41,10 +47,13 @@ const Home = ({ navigation }) => {
         backgroundColor={colors.gray10}
         placeholder={"Search User"}
       />
+      <View style={{ height: verticalScale(10) }} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <FlatList
           horizontal
           data={NOTIFICATIONS_DATA}
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
           keyExtractor={(item, index) => item + index.toString()}
           renderItem={({ item }) => {
             return <Story item={item} />;
@@ -70,9 +79,9 @@ export default Home;
 const styles = ScaledSheet.create({
   mainContainer: {
     flex: 1,
-    paddingHorizontal: verticalScale(8),
+    paddingHorizontal: verticalScale(16),
     backgroundColor: colors.backgroundColor,
-    paddingVertical: verticalScale(10),
+    marginTop: verticalScale(10),
   },
   mapIconCont: {
     flexDirection: "row",

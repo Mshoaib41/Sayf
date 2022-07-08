@@ -17,12 +17,13 @@ import CustomText from "../../../../components/CustomText";
 import { Message_DATA } from "../../../../util/Data";
 import MessageComp from "../../../../components/Message";
 import { callData } from "../../../../util/Data";
-const Messages = ({navigation}) => {
+const Messages = ({ navigation }) => {
   const [active, setActive] = useState(1);
   return (
     <SafeAreaView style={styles.mainContainer}>
       <View style={{ height: verticalScale(15) }} />
       <TextInputComponent />
+      <View style={{ height: verticalScale(10) }} />
       <View>
         <FlatList
           data={NOTIFICATIONS_DATA}
@@ -33,6 +34,7 @@ const Messages = ({navigation}) => {
           }}
         />
       </View>
+      <View style={{ height: verticalScale(10) }} />
       <View style={styles.tabMainContainer}>
         <TouchableOpacity
           activeOpacity={0.6}
@@ -57,7 +59,9 @@ const Messages = ({navigation}) => {
         data={active == 1 ? Message_DATA : callData}
         keyExtractor={(item, index) => item.id + index.toString()}
         renderItem={({ item }) => {
-          return <MessageComp item={item} active={active} navigation={navigation} />;
+          return (
+            <MessageComp item={item} active={active} navigation={navigation} />
+          );
         }}
       />
     </SafeAreaView>

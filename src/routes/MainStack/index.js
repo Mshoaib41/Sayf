@@ -14,10 +14,11 @@ import Conversation from "../../screens/Main/Conversation";
 
 const MainStack = () => {
   const Tab = createBottomTabNavigator();
+
   return (
     <Tab.Navigator
       initialRouteName="HomeStack"
-      screenOptions={({ route }) => ({
+      screenOptions={({ route, navigation }) => ({
         headerShown: false,
         tabBarShowLabel: false,
         tabBarHideOnKeyboard: true,
@@ -26,6 +27,7 @@ const MainStack = () => {
           backgroundColor: colors.parimay,
           height: verticalScale(50),
         },
+
         tabBarIcon: ({ focused, color, size }) => {
           if (route.name == "HomeStack") {
             if (focused) {

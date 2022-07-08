@@ -1,16 +1,16 @@
-import {StyleSheet, Text, View, TextInput} from 'react-native';
-import React from 'react';
+import { StyleSheet, Text, View, TextInput } from "react-native";
+import React from "react";
 
-import {ScaledSheet, verticalScale} from 'react-native-size-matters';
-import colors from '../util/colors';
-import Icon from './Icons';
-const TextInputComponent = ({placeholder}) => {
+import { ScaledSheet, verticalScale } from "react-native-size-matters";
+import colors from "../util/colors";
+import Icon from "./Icons";
+const TextInputComponent = ({ placeholder }) => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.seacrhIconContainer}>
         <Icon
           size={verticalScale(22)}
-          family={'EvilIcons'}
+          family={"EvilIcons"}
           name="search"
           color={colors.black}
         />
@@ -18,7 +18,8 @@ const TextInputComponent = ({placeholder}) => {
       <View style={styles.textInput}>
         <TextInput
           placeholder={placeholder}
-          placeholderTextColor={colors.black}
+          placeholderTextColor={colors.blackish}
+          style={{ fontSize: verticalScale(10) }}
         />
       </View>
     </View>
@@ -29,25 +30,24 @@ export default TextInputComponent;
 
 const styles = ScaledSheet.create({
   mainContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     backgroundColor: colors.white,
-    width: '90%',
-    alignSelf: 'center',
+    width: "95%",
+    alignSelf: "center",
     borderRadius: verticalScale(10),
-    overflow: 'hidden',
-    justifyContent: 'space-between',
+    overflow: "hidden",
+    justifyContent: "space-between",
   },
   seacrhIconContainer: {
     backgroundColor: colors.gray,
-
     borderRadius: verticalScale(10),
-    paddingVertical: verticalScale(10),
-    width: '15%',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingVertical: verticalScale(13),
+    width: "15%",
+    alignItems: "center",
+    justifyContent: "center",
   },
   textInput: {
-    width: '84%',
+    width: "84%",
   },
 });

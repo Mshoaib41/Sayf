@@ -27,7 +27,8 @@ const colors = {
   grenish:"#42C984",
   lightGray1:"#BBBBBB",
   messageColor:"#D8D8D8",
-  fullGray:"#787878"
+  fullGray:"#787878",
+  blackish:"#414141"
 
   
 };

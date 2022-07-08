@@ -11,7 +11,9 @@ const Header = ({ title, height, onPress }) => {
   return (
     <View style={styles.root}>
       <View style={{ width: "15%" }}>
-        <Pressable onPress={() => navigation.navigate("HomeStack")}>
+        <Pressable
+          onPress={() => navigation.navigate("HomeStack", { screen: "Home" })}
+        >
           <Icon source={Images.arrow_left} height={height} />
         </Pressable>
       </View>

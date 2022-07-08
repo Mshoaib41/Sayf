@@ -4,7 +4,7 @@ import { scale, ScaledSheet, verticalScale } from "react-native-size-matters";
 import CustomText from "./CustomText";
 import colors from "../util/colors";
 import images from "../assets/images";
-
+import Icon from "./Icons";
 
 const Post = () => {
   return (
@@ -17,10 +17,15 @@ const Post = () => {
               alignItems: "center",
             }}
           >
-          <Text>Helo</Text>
+            <Icon
+              size={verticalScale(16)}
+              family={"EvilIcons"}
+              name="location"
+              color={colors.white}
+            />
             <CustomText
               color={colors.white}
-              marginLeft={scale(8)}
+              marginLeft={scale(3)}
               label="Ocean Shores, Washington"
               fontSize={10}
             />
@@ -40,13 +45,14 @@ export default Post;
 
 const styles = ScaledSheet.create({
   mainContainer: {
-    width: "100%",
+    width: "95%",
     height: "280@vs",
     borderRadius: "16@vs",
     overflow: "hidden",
     justifyContent: "center",
     alignItems: "center",
-    marginVertical:verticalScale(5)
+    marginVertical: verticalScale(5),
+    alignSelf:'center'
   },
   container: {
     width: "102%",
