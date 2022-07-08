@@ -32,7 +32,7 @@ const styles = ScaledSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: colors.white,
-    width: '85%',
+    width: '90%',
     alignSelf: 'center',
     borderRadius: verticalScale(10),
     overflow: 'hidden',

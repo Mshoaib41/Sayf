@@ -5,7 +5,6 @@ import images from "../assets/images";
 import colors from "../util/colors";
 import CustomText from "./CustomText";
 
-
 const DetailPost = () => {
   return (
     <View style={styles.mainContainer}>
@@ -71,6 +70,7 @@ const styles = ScaledSheet.create({
     padding: "12@vs",
     borderRadius: "16@vs",
     paddingBottom: 0,
+    marginVertical: verticalScale(10),
   },
   photoMainCont: {
     flexDirection: "row",

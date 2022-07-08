@@ -6,13 +6,13 @@ import Images from "..//assets/images";
 import { ScaledSheet } from "react-native-size-matters";
 import { useNavigation } from "@react-navigation/native";
 
-const Header = ({ title }) => {
+const Header = ({ title, height, onPress }) => {
   const navigation = useNavigation();
   return (
     <View style={styles.root}>
       <View style={{ width: "15%" }}>
         <Pressable onPress={() => navigation.navigate("HomeStack")}>
-          <Icon source={Images.arrow_left} />
+          <Icon source={Images.arrow_left} height={height} />
         </Pressable>
       </View>
       <View style={{ width: "70%", alignItems: "center" }}>

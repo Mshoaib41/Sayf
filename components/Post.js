@@ -46,6 +46,7 @@ const styles = ScaledSheet.create({
     overflow: "hidden",
     justifyContent: "center",
     alignItems: "center",
+    marginVertical:verticalScale(5)
   },
   container: {
     width: "102%",
