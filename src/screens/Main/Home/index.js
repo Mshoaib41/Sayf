@@ -79,9 +79,9 @@ export default Home;
 const styles = ScaledSheet.create({
   mainContainer: {
     flex: 1,
-    paddingHorizontal: verticalScale(16),
+    paddingHorizontal: '16@s',
     backgroundColor: colors.backgroundColor,
-    marginTop: verticalScale(10),
+    marginTop: '10@vs',
   },
   mapIconCont: {
     flexDirection: "row",

@@ -17,7 +17,7 @@ const MainStack = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName="HomeStack"
+      initialRouteName="Profile"
       screenOptions={({ route, navigation }) => ({
         headerShown: false,
         tabBarShowLabel: false,

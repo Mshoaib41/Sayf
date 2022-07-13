@@ -28,7 +28,9 @@ const colors = {
   lightGray1:"#BBBBBB",
   messageColor:"#D8D8D8",
   fullGray:"#787878",
-  blackish:"#414141"
+  blackish:"#414141",
+  profileBg:"rgba(241, 241, 241, 1)",
+  red:"#E12222"
 
   
 };

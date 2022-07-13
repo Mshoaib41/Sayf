@@ -5,5 +5,12 @@ const images = {
   starIcon: require("./starIcon.png"),
   chatIcon: require("./chatIcon.png"),
   arrow_left: require("./arrow_left.png"),
+  bellIcon: require("./bellIcon.png"),
+  blockIcon: require("./blockIcon.png"),
+  chatsIcon: require("./chatsIcon.png"),
+  smileIcon: require("./smileIcon.png"),
+  logOutIcon: require("./logOutIcon.png"),
+  emergencyIcon: require("./emergencyIcon.png"),
+  editIcon: require("./editIcon.png"),
 };
 export default images;
