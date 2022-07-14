@@ -7,7 +7,7 @@ import Icon from "../../../../components/Icon";
 import CustomText from "../../../../components/CustomText";
 import TextWithIcon from "./molecules/TextWithIcon";
 import images from "../../../../assets/images";
-
+import { SafeAreaView } from "react-native-safe-area-context";
 const Profile = () => {
   const dataArray = [
     {
@@ -49,11 +49,9 @@ const Profile = () => {
     },
   ];
   return (
-    <>
+    <SafeAreaView style={styles.root}>
       <View
         style={{
-          paddingHorizontal: scale(15),
-          paddingTop: verticalScale(30),
           paddingBottom: verticalScale(20),
         }}
       >
@@ -98,7 +96,7 @@ const Profile = () => {
           })}
         </View>
       </ScrollView>
-    </>
+    </SafeAreaView>
   );
 };
 
@@ -142,5 +140,9 @@ const styles = ScaledSheet.create({
     height: "20@vs",
     resizeMode: "center",
     marginLeft: "12@s",
+  },
+  root: {
+    flex: 1,
+    padding: verticalScale(10),
   },
 });

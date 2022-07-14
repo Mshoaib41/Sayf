@@ -39,7 +39,7 @@ export default Notification;
 const styles = ScaledSheet.create({
   root: {
     flex: 1,
-    padding: 10,
+    padding: verticalScale(10),
   },
   itemContainer: {
     backgroundColor: Colors.gray30,
