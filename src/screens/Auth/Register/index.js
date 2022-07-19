@@ -26,7 +26,7 @@ const Register = ({ navigation }) => {
         <CustomText
           label="Create Account"
           fontSize={23}
-          fontFamily="PoppinsSemiBold"
+          fontFamily="Poppins-SemiBold"
         />
         <CustomText
           label="Connect with your friends today! "

@@ -56,7 +56,7 @@ const styles = ScaledSheet.create({
   },
   label: {
     fontSize: "13@vs",
-    fontFamily: "PoppinsRegular",
+    fontFamily: "Poppins-Regular",
     color: colors.backgroundColor,
     textAlignVertical: "center",
   },

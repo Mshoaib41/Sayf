@@ -11,7 +11,7 @@ const CustomText = (props) => {
             {
               fontSize: verticalScale(props.fontSize || 13),
               color: props.color || "black",
-              fontFamily: props.fontFamily || "PoppinsRegular",
+              fontFamily: props.fontFamily || "Poppins-Regular",
               marginTop: verticalScale(props.marginTop || 0),
               marginBottom: verticalScale(props.marginBottom || 0),
               marginLeft: scale(props.marginLeft || 0),

@@ -33,7 +33,7 @@ const styles = ScaledSheet.create({
   },
   title: {
     fontSize: "18@vs",
-    fontFamily: "PoppinsLight",
+    fontFamily: "Poppins-Light",
     color: colors.black,
   },
   dotInactive: {

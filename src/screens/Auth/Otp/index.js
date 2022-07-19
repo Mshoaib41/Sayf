@@ -23,7 +23,7 @@ const OTP = () => {
         <CustomText
           label="Please Confirm OTP"
           fontSize={19}
-          fontFamily="PoppinsSemiBold"
+          fontFamily="Poppins-SemiBold"
         />
         <CustomText
           label="We have sent verification code on your Phone Number: +01234567891011"

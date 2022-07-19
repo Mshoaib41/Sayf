@@ -35,7 +35,7 @@ const Map = () => {
           }}>
           <CustomText
             label="FIND A LOCATION"
-            fontFamily={'PoppinsMedium'}
+            fontFamily={'Poppins-Medium'}
             fontSize={15}
           />
           <TextInputComponent placeholder={'Type Location'} />
