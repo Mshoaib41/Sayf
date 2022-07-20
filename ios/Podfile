@@ -22,6 +22,8 @@ target 'Sayf' do
   )
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  pod 'GoogleUtilities', :modular_headers => true
+  pod 'FirebaseCoreInternal', :modular_headers => true
 
   target 'SayfTests' do
     inherit! :complete
