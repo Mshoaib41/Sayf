@@ -4,18 +4,23 @@ import { ScaledSheet, verticalScale } from "react-native-size-matters";
 import CustomText from "../CustomText";
 import colors from "../../util/colors";
 
-const MessageComp = ({ item, active, navigation }) => {
+const MessageComp = ({ item, active, navigation, userID }) => {
   return (
     <TouchableOpacity
       activeOpacity={0.6}
       style={styles.mainContainer}
-      onPress={() => navigation.navigate("Conversation")}
+      onPress={() =>
+        navigation.navigate("Conversation", { data: item, authUserID: userID })
+      }
     >
       <View style={{ width: "20%" }}>
-        <Image source={{ uri: item.user_image }} style={styles.image} />
+        <Image
+          source={{ uri: "https://picsum.photos/id/239/200/300" }}
+          style={styles.image}
+        />
       </View>
       <View style={{ width: "70%" }}>
-        <CustomText label={item.name} textStyle={styles.name} />
+        <CustomText label={item.email} textStyle={styles.name} />
         <View
           style={{
             flexDirection: "row",

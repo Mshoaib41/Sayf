@@ -1,10 +1,10 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AuthStack from "./AuthStack";
 import MainStack from "./MainStack";
-
+import Preference from "react-native-preference";
 const theme = {
   ...DefaultTheme,
   colors: {
@@ -12,6 +12,8 @@ const theme = {
     background: "#fff",
   },
 };
+
+
 const Routes = () => {
   const Stack = createNativeStackNavigator();
   return (

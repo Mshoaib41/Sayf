@@ -10,7 +10,11 @@ const AuthWrapper = (props) => {
     <View>
       {props.children}
       <View>
-        <Button label={props.buttonLabel} onPress={props.buttonOnPress} />
+        <Button
+          label={props.buttonLabel}
+          onPress={props.buttonOnPress}
+          loading={props.loading}
+        />
         <View style={{ marginVertical: verticalScale(50) }}>
           <CustomText
             label={props.continueLable}

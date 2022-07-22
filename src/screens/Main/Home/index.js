@@ -5,7 +5,7 @@ import {
   FlatList,
   View,
 } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { scale, ScaledSheet, verticalScale } from "react-native-size-matters";
 import CustomText from "../../../../components/CustomText";
@@ -18,7 +18,10 @@ import SeeAll from "../../../../components/SeeAll.js";
 import Icon from "../../../../components/Icons";
 import Story from "../../../../components/Story";
 import { NOTIFICATIONS_DATA } from "../../../../util/Data";
+import { getAllUsers } from "../../../firebase/fireStore/users";
+
 const Home = ({ navigation }) => {
+
   return (
     <SafeAreaView style={styles.mainContainer}>
       <TouchableOpacity
@@ -79,9 +82,9 @@ export default Home;
 const styles = ScaledSheet.create({
   mainContainer: {
     flex: 1,
-    paddingHorizontal: '16@s',
+    paddingHorizontal: "16@s",
     backgroundColor: colors.backgroundColor,
-    marginTop: '10@vs',
+    marginTop: "10@vs",
   },
   mapIconCont: {
     flexDirection: "row",

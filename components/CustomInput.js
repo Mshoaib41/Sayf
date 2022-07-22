@@ -1,8 +1,14 @@
-import {StyleSheet, Text, View, TextInput, Image} from 'react-native';
-import React from 'react';
-import {ScaledSheet} from 'react-native-size-matters';
-import colors from '../util/colors';
-const CustomInput = ({imagePath, placeholder, secureTextEntry}) => {
+import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import React from "react";
+import { ScaledSheet, verticalScale } from "react-native-size-matters";
+import colors from "../util/colors";
+const CustomInput = ({
+  imagePath,
+  placeholder,
+  secureTextEntry,
+  value,
+  onChange,
+}) => {
   return (
     <View style={styles.mainContainer}>
       <Image source={imagePath} style={styles.imageSize} />
@@ -10,6 +16,9 @@ const CustomInput = ({imagePath, placeholder, secureTextEntry}) => {
         placeholder={placeholder}
         secureTextEntry={secureTextEntry}
         placeholderTextColor={colors.placeholderColor}
+        value={value}
+        onChangeText={onChange}
+        style={styles.text}
       />
     </View>
   );
@@ -20,19 +29,23 @@ export default CustomInput;
 const styles = ScaledSheet.create({
   mainContainer: {
     backgroundColor: colors.gray,
-    width: '85%',
-    flexDirection: 'row',
-    alignSelf: 'center',
-    borderRadius: '25@s',
-    padding: '6@s',
-    marginTop: '25@s',
-    alignItems:"center"
+    width: "85%",
+    flexDirection: "row",
+    alignSelf: "center",
+    borderRadius: "25@s",
+    padding: "6@s",
+    marginTop: "25@s",
+    alignItems: "center",
   },
   imageSize: {
-    width: '20@vs',
-    height: '20@vs',
-    resizeMode: 'contain',
-    marginHorizontal: '15@s',
-    marginTop: '2@s',
+    width: "20@vs",
+    height: "20@vs",
+    resizeMode: "contain",
+    marginHorizontal: "15@s",
+    marginTop: "2@s",
+  },
+  text: {
+    fontSize: verticalScale(12),
+    color: colors.black,
   },
 });

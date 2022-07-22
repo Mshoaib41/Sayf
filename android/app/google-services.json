@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1032142087180",
+    "project_id": "sayf-b111c",
+    "storage_bucket": "sayf-b111c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032142087180:android:4b5ce2212f053dccb3ba29",
+        "android_client_info": {
+          "package_name": "com.sayf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032142087180-5964bvuub3ketmdpfjk59otuiqjlbmev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN8gX5GlFDXg7-cz6FNfDSrghNvKtpBBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032142087180-5964bvuub3ketmdpfjk59otuiqjlbmev.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1032142087180-g9trd1gfnqumk41bj8p5d7vdh9qti1vc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.Sayf"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

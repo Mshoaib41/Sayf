@@ -8,7 +8,13 @@ import CustomText from "../../../../components/CustomText";
 import TextWithIcon from "./molecules/TextWithIcon";
 import images from "../../../../assets/images";
 import { SafeAreaView } from "react-native-safe-area-context";
-const Profile = () => {
+import auth from "@react-native-firebase/auth";
+import Preference from "react-native-preference";
+const Profile = ({ navigation }) => {
+  const signOut = async () => {
+    await auth().signOut();
+    navigation.navigate("AuthStack", { screen: "Login" });
+  };
   const dataArray = [
     {
       id: 1,
@@ -38,7 +44,10 @@ const Profile = () => {
       id: 5,
       imgPath: images.logOutIcon,
       text: "Log Out",
-      onPress: () => console.log("Log Out"),
+      onPress: () => {
+        signOut();
+        Preference.clear();
+      },
     },
     {
       id: 6,
@@ -114,7 +123,7 @@ const styles = ScaledSheet.create({
     height: "140@ms",
     backgroundColor: colors.profileBg,
     borderRadius: "100@vs",
-    marginBottom:'20@vs'
+    marginBottom: "20@vs",
   },
   profileIconCont: {
     backgroundColor: colors.white,

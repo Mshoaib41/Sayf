@@ -1,4 +1,4 @@
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, View, TouchableOpacity, ActivityIndicator } from "react-native";
 import React from "react";
 
 import LinearGradient from "react-native-linear-gradient";
@@ -11,6 +11,7 @@ const Button = ({
   buttonIcon,
   containerStyle,
   innerButtonStyle,
+  loading,
 }) => {
   return (
     <View style={styles.buttonContainer}>
@@ -28,7 +29,11 @@ const Button = ({
               justifyContent: "center",
             }}
           >
-            <Text style={styles.label}>{label}</Text>
+            {loading ? (
+              <ActivityIndicator size={"small"} color="white" />
+            ) : (
+              <Text style={styles.label}>{label}</Text>
+            )}
           </View>
         </LinearGradient>
       </TouchableOpacity>

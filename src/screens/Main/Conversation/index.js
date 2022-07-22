@@ -1,5 +1,12 @@
-import { StyleSheet, Text, View, Image, TextInput,  } from "react-native";
-import React,{useEffect} from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
+import React, { useEffect, useCallback, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScaledSheet } from "react-native-size-matters";
 import { verticalScale } from "react-native-size-matters";
@@ -7,10 +14,21 @@ import colors from "../../../../util/colors";
 import LinearGradient from "react-native-linear-gradient";
 import Icon from "../../../../components/Icons";
 import CustomText from "../../../../components/CustomText";
-const Conversation = ({navigation}) => {
+import { sendMessage } from "../../../firebase/fireStore/chats";
+import { Bubble, GiftedChat, Send } from "react-native-gifted-chat";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { ChatBody } from "../../../../components/Chats/ChatBody";
+const Conversation = ({ navigation, route }) => {
+  console.log("----Route", route.params);
+  const { data, authUserID } = route.params;
+  const [messageText, setMessageText] = useState("");
 
+  const handleSubmit = async (message) => {
+    await sendMessage(data.id, authUserID, message);
+    setMessageText("");
+  };
   return (
-    <SafeAreaView style={styles.mainContainer}>
+    <View style={styles.mainContainer}>
       <LinearGradient
         start={{ x: -0.4, y: 0.1 }}
         end={{ x: 2.5, y: 0.1 }}
@@ -21,12 +39,17 @@ const Conversation = ({navigation}) => {
           style={{ height: "15%", flexDirection: "row", alignItems: "center" }}
         >
           <View style={{ marginHorizontal: verticalScale(10) }}>
-            <Icon
-              size={verticalScale(24)}
-              family={"AntDesign"}
-              name="arrowleft"
-              color={colors.white}
-            />
+            <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={() => navigation.pop()}
+            >
+              <Icon
+                size={verticalScale(24)}
+                family={"AntDesign"}
+                name="arrowleft"
+                color={colors.white}
+              />
+            </TouchableOpacity>
           </View>
           <View
             style={{ flexDirection: "row", width: "65%", alignItems: "center" }}
@@ -36,7 +59,10 @@ const Conversation = ({navigation}) => {
               style={styles.iamage}
             />
             <View>
-              <CustomText label="Edward Bro" textStyle={styles.name} />
+              <CustomText
+                label={route.params.data?.email?.split?.("@")?.[0]}
+                textStyle={styles.name}
+              />
               <CustomText label="Online" textStyle={styles.status} />
             </View>
           </View>
@@ -57,17 +83,7 @@ const Conversation = ({navigation}) => {
           </View>
         </View>
         <View style={styles.innerMainContainer}>
-          <View style={styles.message}>
-            <CustomText label="Hi" textStyle={styles.messageText} />
-          </View>
-          <CustomText label="9:21 PM" textStyle={styles.timerText} />
-          <View style={styles.message1}>
-            <CustomText
-              label="Hi"
-              textStyle={[styles.messageText, { color: colors.black }]}
-            />
-          </View>
-          <CustomText label="9:23 PM" textStyle={[styles.timerText1]} />
+          <ChatBody userId={authUserID} relatedUserId={data.id} />
         </View>
         <View style={styles.textInputContainer}>
           <View style={{ width: verticalScale(20) }} />
@@ -81,11 +97,14 @@ const Conversation = ({navigation}) => {
                 height: verticalScale(35),
                 fontSize: verticalScale(12),
                 color: colors.black,
-                paddingHorizontal:verticalScale(10)
+                paddingHorizontal: verticalScale(10),
               }}
+              value={messageText}
+              onChangeText={(value) => setMessageText(value)}
             />
           </View>
           <View style={{ width: verticalScale(10) }} />
+
           <View style={styles.plusIcon}>
             <Icon
               size={verticalScale(16)}
@@ -94,16 +113,23 @@ const Conversation = ({navigation}) => {
               color={colors.white}
             />
           </View>
+
           <View style={{ width: verticalScale(10) }} />
-          <Icon
-            size={verticalScale(18)}
-            family={"Ionicons"}
-            name="ios-send"
-            color={colors.parimay}
-          />
+          <TouchableOpacity
+            activeOpacity={0.6}
+            disabled={!messageText}
+            onPress={() => handleSubmit(messageText)}
+          >
+            <Icon
+              size={verticalScale(18)}
+              family={"Ionicons"}
+              name="ios-send"
+              color={colors.parimay}
+            />
+          </TouchableOpacity>
         </View>
       </LinearGradient>
-    </SafeAreaView>
+    </View>
   );
 };
 

@@ -5,7 +5,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TextInputComponent from "../../../../components/TextInput";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { verticalScale } from "react-native-size-matters";
@@ -17,8 +17,21 @@ import CustomText from "../../../../components/CustomText";
 import { Message_DATA } from "../../../../util/Data";
 import MessageComp from "../../../../components/Message";
 import { callData } from "../../../../util/Data";
+import { getAllUsers } from "../../../firebase/fireStore/users";
+import Preference from "react-native-preference";
 const Messages = ({ navigation }) => {
   const [active, setActive] = useState(1);
+  const [data, setData] = useState([]);
+  const [userID, setUserID] = useState("");
+  useEffect(() => {
+    getUsers();
+    setUserID(Preference.get("userID"));
+  }, []);
+  const getUsers = async () => {
+    const response = await getAllUsers();
+    setData(response);
+  };
+
   return (
     <SafeAreaView style={styles.mainContainer}>
       <View style={{ height: verticalScale(15) }} />
@@ -56,11 +69,16 @@ const Messages = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       <FlatList
-        data={active == 1 ? Message_DATA : callData}
+        data={active == 1 ? data : callData}
         keyExtractor={(item, index) => item.id + index.toString()}
         renderItem={({ item }) => {
           return (
-            <MessageComp item={item} active={active} navigation={navigation} />
+            <MessageComp
+              item={item}
+              active={active}
+              navigation={navigation}
+              userID={userID}
+            />
           );
         }}
       />
