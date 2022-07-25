@@ -11,7 +11,7 @@ import Messages from "../../screens/Main/Message";
 import colors from "../../../util/colors";
 import SellAllData from "../../screens/Main/SeeAllData";
 import Conversation from "../../screens/Main/Conversation";
-
+import { Platform } from "react-native";
 const MainStack = () => {
   const Tab = createBottomTabNavigator();
 
@@ -25,7 +25,7 @@ const MainStack = () => {
         tabBarActiveTintColor: colors.white,
         tabBarStyle: {
           backgroundColor: colors.parimay,
-          height: verticalScale(50),
+          height: verticalScale(Platform.OS == "ios" ? 70 : 50),
         },
 
         tabBarIcon: ({ focused, color, size }) => {
@@ -42,7 +42,7 @@ const MainStack = () => {
                 >
                   <Image
                     source={require("../../../assets/images/Icon/HomeActive.png")}
-                    resizeMode="center"
+                    resizeMode="contain"
                     style={{
                       width: verticalScale(30),
                       height: verticalScale(30),
@@ -55,7 +55,7 @@ const MainStack = () => {
                 <View>
                   <Image
                     source={require("../../../assets/images/Icon/HomeInActive.png")}
-                    resizeMode="center"
+                    resizeMode="contain"
                     style={{
                       width: verticalScale(30),
                       height: verticalScale(30),
@@ -77,7 +77,7 @@ const MainStack = () => {
                 >
                   <Image
                     source={require("../../../assets/images/Icon/MessageActive.png")}
-                    resizeMode="center"
+                    resizeMode="contain"
                     style={{
                       width: verticalScale(30),
                       height: verticalScale(30),
@@ -90,7 +90,7 @@ const MainStack = () => {
                 <View>
                   <Image
                     source={require("../../../assets/images/Icon/Message.png")}
-                    resizeMode="center"
+                    resizeMode="contain"
                     style={{
                       width: verticalScale(30),
                       height: verticalScale(30),
@@ -112,7 +112,7 @@ const MainStack = () => {
                 >
                   <Image
                     source={require("../../../assets/images/Icon/Bell.png")}
-                    resizeMode="center"
+                    resizeMode="contain"
                     style={{
                       width: verticalScale(30),
                       height: verticalScale(30),
@@ -125,7 +125,7 @@ const MainStack = () => {
                 <View>
                   <Image
                     source={require("../../../assets/images/Icon/BellInactive.png")}
-                    resizeMode="center"
+                    resizeMode="contain"
                     style={{
                       width: verticalScale(30),
                       height: verticalScale(30),
@@ -147,7 +147,7 @@ const MainStack = () => {
                 >
                   <Image
                     source={require("../../../assets/images/Icon/UserActive.png")}
-                    resizeMode="center"
+                    resizeMode="contain"
                     style={{
                       width: verticalScale(30),
                       height: verticalScale(30),
@@ -160,7 +160,7 @@ const MainStack = () => {
                 <View>
                   <Image
                     source={require("../../../assets/images/Icon/User.png")}
-                    resizeMode="center"
+                    resizeMode="contain"
                     style={{
                       width: verticalScale(30),
                       height: verticalScale(30),

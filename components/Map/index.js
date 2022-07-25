@@ -17,6 +17,7 @@ const CustomMap = ({ setMarker, marker, setRegion, region }) => {
 
   const getLocation = async () => {
     const permission = await requestLocationPermission((location) => {
+      console.log('requestLocationPermission',location)
       setRegion({
         latitude: location?.coords?.latitude || 36.2443422,
         longitude: location.coords?.longitude || -113.7354532,
@@ -42,9 +43,10 @@ const CustomMap = ({ setMarker, marker, setRegion, region }) => {
   return (
     <View style={styles.container}>
       <MapView
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "110%" }}
         region={region}
         onRegionChangeComplete={setRegion}
+
       >
         {marker && <Marker coordinate={marker} />}
       </MapView>

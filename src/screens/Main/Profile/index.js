@@ -147,7 +147,7 @@ const styles = ScaledSheet.create({
   editIconStyle: {
     width: "20@vs",
     height: "20@vs",
-    resizeMode: "center",
+    resizeMode: "contain",
     marginLeft: "12@s",
   },
   root: {

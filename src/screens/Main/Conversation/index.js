@@ -18,6 +18,7 @@ import { sendMessage } from "../../../firebase/fireStore/chats";
 import { Bubble, GiftedChat, Send } from "react-native-gifted-chat";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { ChatBody } from "../../../../components/Chats/ChatBody";
+
 const Conversation = ({ navigation, route }) => {
   console.log("----Route", route.params);
   const { data, authUserID } = route.params;
@@ -28,7 +29,7 @@ const Conversation = ({ navigation, route }) => {
     setMessageText("");
   };
   return (
-    <View style={styles.mainContainer}>
+    <SafeAreaView style={styles.mainContainer}>
       <LinearGradient
         start={{ x: -0.4, y: 0.1 }}
         end={{ x: 2.5, y: 0.1 }}
@@ -129,7 +130,7 @@ const Conversation = ({ navigation, route }) => {
           </TouchableOpacity>
         </View>
       </LinearGradient>
-    </View>
+    </SafeAreaView>
   );
 };
 

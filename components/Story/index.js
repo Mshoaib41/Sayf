@@ -53,15 +53,16 @@ const styles = ScaledSheet.create({
     margin: verticalScale(5),
     borderRadius: verticalScale(99),
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center",  
+ 
   },
   image: {
     width: verticalScale(50),
     height: verticalScale(50),
     borderRadius: verticalScale(99),
-    resizeMode: "contain",
-    overflow: "hidden",
+    resizeMode: "cover",
     alignSelf: "center",
+    
   },
   plusIcon: {
     borderRadius: verticalScale(99),
@@ -76,6 +77,6 @@ const styles = ScaledSheet.create({
   name: {
     fontSize: verticalScale(10),
     color: colors.black,
-    alignSelf:"center"
+    alignSelf: "center",
   },
 });
